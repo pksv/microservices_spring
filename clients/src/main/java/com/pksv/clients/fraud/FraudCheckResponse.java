@@ -1,4 +1,4 @@
-package com.pksv.fraud.model.response;
+package com.pksv.clients.fraud;
 
 public record FraudCheckResponse(Boolean isFraud) {
 }

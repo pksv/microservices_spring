@@ -24,6 +24,7 @@ public class FraudCheckHistory {
             generator = "fraud_id_sequence"
     )
     private Integer id;
+    @Column(unique = true)
     private Integer customerId;
     private Boolean isFraud;
     private LocalDateTime createdAt;

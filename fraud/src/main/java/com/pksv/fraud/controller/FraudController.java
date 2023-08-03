@@ -1,6 +1,6 @@
 package com.pksv.fraud.controller;
 
-import com.pksv.fraud.model.response.FraudCheckResponse;
+import com.pksv.clients.fraud.FraudCheckResponse;
 import com.pksv.fraud.service.FraudCheckService;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

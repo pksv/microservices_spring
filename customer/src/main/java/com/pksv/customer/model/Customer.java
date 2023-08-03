@@ -24,5 +24,6 @@ public class Customer {
     private Integer id;
     private String fName;
     private String lName;
+    @Column(unique = true)
     private String email;
 }
