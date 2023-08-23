@@ -10,6 +10,8 @@ import com.pksv.customer.model.request.CustomerRegistrationRequest;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @AllArgsConstructor
 public class CustomerService {
@@ -40,5 +42,10 @@ public class CustomerService {
                 "internal.exchange",
                 "internal.notification.routing-keys"
         );
+    }
+
+    public Customer findCustomerEmail(String email) {
+        List<Customer> customers = repo.findCustomerByEmail(email);
+        return customers.get(0);
     }
 }

@@ -1,13 +1,11 @@
 package com.pksv.customer.controller;
 
+import com.pksv.customer.model.Customer;
 import com.pksv.customer.model.request.CustomerRegistrationRequest;
 import com.pksv.customer.service.CustomerService;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @Slf4j
 @RestController
@@ -19,7 +17,14 @@ public class CustomerController {
 
     @PostMapping
     public void registerCustomer(@RequestBody CustomerRegistrationRequest request) {
-        log.info("new Customer " + request);
+        log.info("new Customer.... {}", request);
         customerService.registerCustomer(request);
+    }
+
+    @GetMapping
+    @ResponseBody
+    public Customer getCustomer(@RequestParam("email") String email) {
+        log.info("email to search {}", email);
+        return customerService.findCustomerEmail(email);
     }
 }
